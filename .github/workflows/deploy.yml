@@ -22,8 +22,7 @@ jobs:
             ${{ env.spago_global_cache }}
           key: >-
             ${{ hashFiles('package-lock.json') }}-
-            ${{ hashFiles('spago.dhall') }}-
-            ${{ hashFiles('packages.dhall') }}
+            ${{ hashFiles('spago.lock') }}
       - uses: pnpm/action-setup@v2.2.4
         name: Install pnpm
         id: pnpm-install

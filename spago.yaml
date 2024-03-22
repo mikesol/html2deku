@@ -1,0 +1,83 @@
+package:
+  name: html2deku
+  dependencies:
+    - arrays
+    - control
+    - deku-core
+    - deku-dom
+    - dodo-printer
+    - effect
+    - either
+    - exceptions
+    - filterable
+    - functions
+    - lists
+    - maybe
+    - partial
+    - prelude
+    - random
+    - string-parsers
+    - strings
+    - tidy
+    - tidy-codegen
+    - tuples
+    - web-html
+  test:
+    main: Test.Main
+    dependencies:
+      - aff
+      - console
+      - datetime
+      - spec
+      - transformers
+workspace:
+  package_set:
+    registry: 50.4.0
+  extra_packages:
+    hyrule:
+      # git: https://github.com/mikesol/purescript-hyrule.git
+      # ref: master
+      # git: https://github.com/srghma/purescript-hyrule.git
+      # ref: hyrule-master
+      path: /home/srghma/projects/purescript-hyrule
+    bolson:
+      # git: https://github.com/mikesol/purescript-bolson.git
+      # git: https://github.com/srghma/purescript-bolson.git
+      # ref: main
+      path: /home/srghma/projects/purescript-bolson
+    deku:
+      # git: https://github.com/mikesol/purescript-deku.git
+      # ref: main
+      # subdir: deku
+      path: /home/srghma/projects/purescript-deku/deku
+    deku-core:
+      # git: https://github.com/mikesol/purescript-deku.git
+      # ref: main
+      # subdir: deku-core
+      path: /home/srghma/projects/purescript-deku/deku-core
+    deku-css:
+      # git: https://github.com/mikesol/purescript-deku.git
+      # ref: main
+      # subdir: deku-css
+      path: /home/srghma/projects/purescript-deku/deku-css
+    deku-dom:
+      # git: https://github.com/mikesol/purescript-deku.git
+      # ref: main
+      # subdir: deku-dom
+      path: /home/srghma/projects/purescript-deku/deku-dom
+    dodo-printer:
+      # git: https://github.com/natefaubion/purescript-dodo-printer.git
+      # git: https://github.com/srghma/purescript-dodo-printer.git
+      # ref: master
+      path: /home/srghma/projects/purescript-dodo-printer
+    tidy:
+      # git: https://github.com/natefaubion/purescript-tidy.git
+      # git: https://github.com/srghma/purescript-tidy.git
+      # ref: main
+      # subdir: lib
+      path: /home/srghma/projects/purescript-tidy/lib
+    tidy-codegen:
+      # git: https://github.com/natefaubion/purescript-tidy-codegen.git
+      # git: https://github.com/srghma/purescript-tidy-codegen.git
+      # ref: main
+      path: /home/srghma/projects/purescript-tidy-codegen

@@ -1,3 +1,3 @@
-import { main } from "PureScript";
+import { main } from "PureScript/Main/index.js";
 
 main();
