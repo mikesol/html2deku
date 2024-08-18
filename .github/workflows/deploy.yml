@@ -1,3 +1,6 @@
+# DONT FORGET TO ENABLE GITHUB PAGES HERE https://github.com/$username/$repo/settings/pages
+# "Deploy from branch" -> gh-pages -> / (root)
+
 name: Build and Deploy
 on: [push]
 permissions:
@@ -13,6 +16,13 @@ jobs:
           lfs: true
       - name: Checkout LFS objects
         run: git lfs checkout
+
+      - uses: purescript-contrib/setup-purescript@main
+        with:
+          purescript: "latest"
+          purs-tidy: "latest"
+          spago: "unstable"
+
       - name: Cache purescript dependencies
         uses: actions/cache@v2
         with:
@@ -22,8 +32,7 @@ jobs:
             ${{ env.spago_global_cache }}
           key: >-
             ${{ hashFiles('package-lock.json') }}-
-            ${{ hashFiles('spago.dhall') }}-
-            ${{ hashFiles('packages.dhall') }}
+            ${{ hashFiles('spago.lock') }}
       - uses: pnpm/action-setup@v2.2.4
         name: Install pnpm
         id: pnpm-install
@@ -43,7 +52,7 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - run: pnpm i && pnpm build
+      - run: pnpm i && pnpm test && pnpm build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
